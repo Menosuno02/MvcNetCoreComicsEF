@@ -1,0 +1,24 @@
+﻿@model Comic
+
+<a asp-controller="Comics" asp-action="Index" class="btn btn-secondary w-100 my-3">
+    Volver al Index
+</a>
+
+<h2 class="text-center text-danger">@ViewData["MENSAJE"]</h2>
+
+@if (Model != null)
+{
+    <div class="row">
+        <div class="col-6">
+            <ul class="list-group">
+                <li class="list-group-item">ID: @Model.IdComic</li>
+                <li class="list-group-item">Nombre: @Model.Nombre</li>
+                <li class="list-group-item">Descripción: @Model.Descripcion</li>
+            </ul>
+        </div>
+        <div class="col-6">
+            <img class="w-75" src="@Model.Imagen" />
+        </div>
+    </div>
+}
+

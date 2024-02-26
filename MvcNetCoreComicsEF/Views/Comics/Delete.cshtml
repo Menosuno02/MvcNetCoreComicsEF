@@ -1,0 +1,20 @@
+﻿@model Comic
+
+<h2 class="text-center text-danger">@ViewData["MENSAJE"]</h2>
+
+@if (Model != null)
+{
+    <h2>¿Seguro que quieres borrar @Model.Nombre (con ID @Model.IdComic?)</h2>
+    <div class="row mt-3">
+        <div class="col-6">
+            <form method="post">
+                <input type="hidden" name="id" value="@Model.IdComic" />
+                <button class="btn btn-danger w-100">Si, borrar</button>
+            </form>
+        </div>
+        <div class="col-6">
+            <a asp-controller="Comics" asp-action="Index"
+               class="btn btn-secondary w-100">No, cancelar</a>
+        </div>
+    </div>
+}

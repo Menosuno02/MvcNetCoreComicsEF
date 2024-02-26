@@ -1,0 +1,27 @@
+﻿@model List<Comic>
+
+<a asp-controller="Comics" asp-action="Create" class="btn btn-success w-100 my-3">
+    Crear comic
+</a>
+
+<div class="row">
+    @foreach (Comic comic in Model)
+    {
+        <div class="col-4 mb-3">
+            <div class="card">
+                <img class="card-img-top" src="@comic.Imagen" />
+                <div class="card-body">
+                    <h5 class="card-title">@comic.Nombre</h5>
+                    <a asp-controller="Comics" asp-action="Details"
+                       asp-route-id="@comic.IdComic" class="btn btn-primary w-100 mt-3">
+                        Detalles
+                    </a>
+                    <a asp-controller="Comics" asp-action="Delete"
+                       asp-route-id="@comic.IdComic" class="btn btn-danger w-100 mt-3">
+                        Borrar
+                    </a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
